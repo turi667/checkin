@@ -1,5 +1,5 @@
 <?php
-$connect = mysqli_connect("localhost", "root", "mysql123", "checkinapp");
+$connect = mysqli_connect("localhost", "root", "", "checkinapp");
 if(isset($_POST["id"]))
 {
  $query = "UPDATE user SET active = 1  WHERE id = '".$_POST["id"]."'";
