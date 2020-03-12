@@ -4,7 +4,7 @@
 $connect = mysqli_connect("localhost", "root", "mysql123", "checkinapp");
 $columns = array('first_name', 'last_name',);
 
-$query = "SELECT * FROM user where active=1";
+$query = "SELECT * FROM user where active=0";
 
 if(isset($_POST["search"]["value"]))
 {
