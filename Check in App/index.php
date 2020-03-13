@@ -1,3 +1,4 @@
+
 <html>
  <head>
   <title>check in app</title>
@@ -32,7 +33,6 @@
    <br />
    <div class="table-responsive">
    <br />
-
     <br />
     <div id="alert_message"></div>
     <table id="user_data" class="table table-bordered table-striped">
@@ -41,9 +41,9 @@
        <th>First Name</th>
        <th>Last Name</th>
        <th>Check In</th>
+       <th>Active</th>
       </tr>
      </thead>
-
     </table>
    </div>
   </div>
@@ -51,10 +51,8 @@
 </html>
 <script type="text/javascript" language="javascript" >
  $(document).ready(function(){
-
   fetch_data();
-
-  function fetch_data()
+  function fetch_data(query='')
   {
    var dataTable = $('#user_data').DataTable({
     "processing" : true,
@@ -62,7 +60,8 @@
     "order" : [],
     "ajax" : {
      url:"home.php",
-     type:"POST"
+     type:"POST",
+     data:{query:query}
     }
    });
   }
