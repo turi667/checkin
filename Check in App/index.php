@@ -38,9 +38,9 @@
     <table id="user_data" class="table table-bordered table-striped">
      <thead>
       <tr>
-       <th>Firstt Name</th>
+       <th>First Name</th>
        <th>Last Name</th>
-       <th></th>
+       <th>Check In</th>
       </tr>
      </thead>
 
