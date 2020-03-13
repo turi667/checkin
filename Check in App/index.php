@@ -52,7 +52,7 @@
 <script type="text/javascript" language="javascript" >
  $(document).ready(function(){
   fetch_data();
-  function fetch_data(query='')
+  function fetch_data()
   {
    var dataTable = $('#user_data').DataTable({
     "processing" : true,
@@ -61,7 +61,7 @@
     "ajax" : {
      url:"home.php",
      type:"POST",
-     data:{query:query}
+   
     }
    });
   }
