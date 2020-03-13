@@ -1,15 +1,14 @@
-
 <?php
 
 $connect = mysqli_connect("localhost", "root", "", "checkinapp");
 $columns = array('first_name', 'last_name',);
 
-$query = "SELECT * FROM user where active=0";
+$query = "SELECT * FROM user  ";
 
 if(isset($_POST["search"]["value"]))
 {
  $query .= '
-AND first_name LIKE "%'.$_POST["search"]["value"].'%"
+WHERE first_name LIKE "%'.$_POST["search"]["value"].'%"
 OR last_name LIKE "%'.$_POST["search"]["value"].'%"
  OR active LIKE  "%'.$_POST["search"]["value"].'%"';
 }
@@ -43,6 +42,7 @@ while($row = mysqli_fetch_array($result))
  $sub_array[] = '<div  data-id="'.$row["id"].'" data-column="first_name">' . $row["first_name"] . '</div>';
  $sub_array[] = '<div  data-id="'.$row["id"].'" data-column="last_name">' . $row["last_name"] . '</div>';
  $sub_array[] = '<button type="button" name="checkin" class="btn btn-primary btn-xxl checkin" id="'.$row["id"].'">Check in</button>';
+$sub_array[] = '<div  data-id="'.$row["id"].'" data-column="active">' . $row["active"] . '</div>';
  $data[] = $sub_array;
 }
 
