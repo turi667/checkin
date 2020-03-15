@@ -41,7 +41,7 @@
        <th>First Name</th>
        <th>Last Name</th>
        <th>Check In</th>
-       <th>Active</th>
+   
       </tr>
      </thead>
     </table>
