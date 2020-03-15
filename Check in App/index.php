@@ -29,7 +29,7 @@
  </head>
  <body>
   <div class="container box">
-   <h1 align="center">checkin</h1>
+   <h1 align="center">Checkin</h1>
    <br />
    <div class="table-responsive">
    <br />
