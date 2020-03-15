@@ -1,18 +1,19 @@
 <?php
 
-$connect = mysqli_connect("localhost", "root", "", "checkinapp");
+$connect = mysqli_connect("localhost", "root", "mysql123", "checkinapp");
 $columns = array('first_name', 'last_name','active');
 
 $query = "SELECT * FROM user WHERE active=0  ";
 if(isset($_POST["id"]))
 
-
+$query = '';
 if(isset($_POST["search"]["value"]))
 
  $query .= '
-AND first_name LIKE "%'.$_POST["search"]["value"].'%"
-OR last_name LIKE "%'.$_POST["search"]["value"].'%"
+ AND first_name LIKE "%'.$_POST["search"]["value"].'%"
  ';
+
+
 
 if(isset($_POST["order"]))
 {
@@ -49,7 +50,7 @@ while($row = mysqli_fetch_array($result))
 
 function get_all_data($connect)
 {
- $query = "SELECT * FROM user WHERE active=0  ";
+ $query = "SELECT * FROM user";
  $result = mysqli_query($connect, $query);
  return mysqli_num_rows($result);
 }
