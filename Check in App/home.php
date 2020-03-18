@@ -1,5 +1,4 @@
 <?php
-
 $connect = mysqli_connect("localhost", "root", "", "checkinapp");
 $columns = array(
     'first_name',
@@ -7,15 +6,13 @@ $columns = array(
     'active'
 );
 
-$query = "SELECT id,first_name,last_name 
-FROM user WHERE active=0 ";
-if (isset($_POST["id"]))
-$query .= '';
+$query =
+"SELECT * FROM user WHERE active=0 ";
 
 if(isset($_POST["search"]["value"]))
 {
  $query .= '
-AND (first_name LIKE "%'.$_POST["search"]["value"].'%"
+ AND (first_name LIKE "%'.$_POST["search"]["value"].'%"
  OR last_name LIKE "%'.$_POST["search"]["value"].'%")
  ';
 }
@@ -63,8 +60,5 @@ $output = array(
 );
 
 echo json_encode($output);
-
-?>
-
 
 ?>
