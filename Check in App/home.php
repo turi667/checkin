@@ -1,6 +1,6 @@
 <?php
 
-$connect = mysqli_connect("localhost", "root", "mysql123", "checkinapp");
+$connect = mysqli_connect("localhost", "root", "", "checkinapp");
 $columns = array(
     'first_name',
     'last_name',
